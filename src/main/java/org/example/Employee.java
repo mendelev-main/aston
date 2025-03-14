@@ -1,8 +1,18 @@
 package org.example;
 
-public class Employee {
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "employees")
+public final class Employee {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "surname")
     private String surname;
 
     @Override
@@ -14,7 +24,7 @@ public class Employee {
                 '}';
     }
 
-    public Employee(){
+    public Employee() {
 
     }
 
